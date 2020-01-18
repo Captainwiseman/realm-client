@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <img id="logo" src="../assets/logo.png" />
     <RealmsStrip />
   </div>
 </template>
@@ -16,3 +16,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+#logo {
+  width: 250px;
+  height: 250px;
+}
+</style>
