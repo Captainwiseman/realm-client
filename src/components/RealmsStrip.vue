@@ -1,38 +1,39 @@
 <template>
-  <div class="chrous-main">
-    <h1>Chorus</h1>
-    <h2>Cities of Esmeralda</h2>
-    <p>Below are the recent stats from {{ timestamp }}</p>
-    <ul id="realms">
-      <li v-for="realm in realms" v-bind:key="realm._id">
+  <div>
+    <span>
+      Last updated
+    </span>
+    <p class="timestamp">{{ timestamp.date }} <br />{{ timestamp.time }}</p>
+    <ul id="realms-counter">
+      <li v-for="realm in formatedRealmsData" v-bind:key="realm._id">
         <h3 class="realm-name">{{ realm.name }}</h3>
         <ul>
-          <li class="counter">{{ realm.population.common }}</li>
+          <li class="counter">Common: {{ realm.population.common }}</li>
         </ul>
         <ul class="realms-armies">
-          <li v-for="army in realm.population.armies" v-bind:key="army.name">{{army.name}}</li>
+          <li v-for="army in realm.population.armies" v-bind:key="army.name">
+            {{ army.name }}
+          </li>
         </ul>
       </li>
-      <pre>{{ realms }}</pre>
+      <pre>{{ realmsData }}</pre>
     </ul>
   </div>
 </template>
 
 <script>
+import utils from "./scripts/realms.js";
 import axios from "axios";
-
 const endpoint = "http://87.71.138.147:3000/realms";
 
 export default {
   name: "Realms-Strip",
-  el: "#realms",
-  props: {
-    msg: String
-  },
+  // el: "#realms-counter",
   data() {
     return {
-      timestamp: "100",
-      realms: null
+      timestamp: {},
+      realmsData: null,
+      formatedRealmsData: []
     };
   },
   mounted() {
@@ -46,7 +47,11 @@ export default {
           port: 3000
         }
       })
-      .then(response => (this.realms = response.data));
+      .then(response => {
+        this.realmsData = response.data; // Formatted mutates original, need to fix
+        this.formatedRealmsData = utils.formatRealms(this.realmsData);
+        this.timestamp = utils.getTimestampObject(response.data[0].timestamp); //Getting the data from the first realm. NEED BETTER SERVER DATA
+      });
   }
 };
 </script>
@@ -55,15 +60,26 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC&display=swap");
 
-h2 {
-  margin: 20px 0 0;
-}
 h3.realm-name {
   font-family: "IM Fell Great Primer SC", "Lucida Sans Unicode", "Lucida Grande",
     sans-serif;
   font-size: 26px;
   letter-spacing: 1.6px;
   word-spacing: 1.4px;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+}
+p.timestamp {
+  font-family: "IM Fell Great Primer SC", "Lucida Sans Unicode", "Lucida Grande",
+    sans-serif;
+  font-size: 17px;
+  letter-spacing: 1.2px;
+  word-spacing: 1px;
+  color: cadetblue;
+  margin: 0;
   font-weight: 700;
   text-decoration: none;
   font-style: normal;
