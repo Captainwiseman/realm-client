@@ -9,7 +9,21 @@
 </template>
 
 <style>
+html {
+  position: fixed;
+  z-index: -1;
+  padding: 0;
+  margin: 0;
+}
+
 #app {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  background: black;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18,7 +32,11 @@
 }
 
 #nav {
+  z-index: 1;
   padding: 30px;
+  position: sticky;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 #nav a {
