@@ -1,29 +1,32 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="nav-header">
+      <ul class="nav-list">
+      <li><router-link to="/">Home</router-link></li>
+      <li><router-link to="/about">About</router-link></li>
+      </ul>
     </div>
-    <router-view />
+    <router-view id="page" />
   </div>
 </template>
 
 <style>
-html {
-  position: fixed;
-  z-index: -1;
+* {
   padding: 0;
   margin: 0;
+}
+html, body {
+  /* z-index: -1; */
+  height: 100%;
+  background-color: black;
 }
 
 #app {
   width: 100%;
   height: 100%;
-  z-index: 1;
-  position: fixed;
-  padding: 0;
-  margin: 0;
-  background: black;
+  z-index: 0;
+  position: absolute;
+  /* background: black; */
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -31,20 +34,35 @@ html {
   color: #2c3e50;
 }
 
-#nav {
+#nav-header {
   z-index: 1;
-  padding: 30px;
+  padding: 10px;
   position: sticky;
   top: 0;
-  background-color: rgba(0, 0, 0, 0);
+  height: 30px;
+  background-color: rgba(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#nav a {
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav-list li {
+  padding: 15px;
+}
+
+#nav-header a {
   font-weight: bold;
   color: #2c3e50;
 }
 
-#nav a.router-link-exact-active {
+#nav-header a.router-link-exact-active {
   color: #42b983;
 }
 </style>
