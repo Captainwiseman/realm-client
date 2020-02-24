@@ -1,16 +1,18 @@
 <template>
-  <div class="home">
+  <div class="home-home">
+    <div class="background-layer layer0"></div>
     <div class="background-layer layer1"></div>
     <div class="background-layer layer2"></div>
     <div class="background-layer layer3"></div>
     <div class="background-layer layer4"></div>
+    <div class="home-strip"></div>
     <div id="home-header">
-      <img id="logo" src="../assets/logo.png" />
       <h1>Chorus</h1>
       <h2>Nobles of Esmeralda</h2>
+      <img id="logo" src="../assets/logo.png" />
     </div>
-    <RealmsStrip />
-    <ChatStrip />
+    <RealmsStrip class="home-strip" />
+    <ChatStrip class="home-strip" />
   </div>
 </template>
 
@@ -29,35 +31,32 @@ export default {
 </script>
 
 <style scoped>
-.home {
-  position: absolute;
+.home-home {
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
   left: 0px;
   top: 0px;
-  z-index: 0;
-  margin: 0;
-  padding: 0;
   width: 100%;
   height: 100%;
+  background-size: cover;
+}
+
+.background-layer {
+  display: none;
   z-index: 0;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  background: url("../assets/background.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
-.background-layer {
+.layer0 {
   z-index: 0;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url("../assets/background.png") no-repeat center center fixed;
 }
 
 .layer1 {
@@ -79,12 +78,16 @@ export default {
 
 #home-header {
   z-index: 2;
-  margin: 0;
-  padding: 0;
   top: 60px;
   width: 100%;
   height: 100%;
-  /* position: absolute; */
+  position: fixed;
+}
+
+.home-strip {
+  background-color: pink;
+  height: 100%;
+  width: 100%;
 }
 
 h1 {
@@ -104,9 +107,6 @@ h1 {
     0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a,
     0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212,
     0 22px 30px rgba(0, 0, 0, 0.9);
-}
-h2 {
-  margin: 0;
 }
 
 #logo {
