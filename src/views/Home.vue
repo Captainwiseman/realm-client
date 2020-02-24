@@ -4,9 +4,11 @@
     <div class="background-layer layer2"></div>
     <div class="background-layer layer3"></div>
     <div class="background-layer layer4"></div>
-    <img id="logo" src="../assets/logo.png" />
-    <h1>Chorus</h1>
-    <h2>Nobles of Esmeralda</h2>
+    <div id="home-header">
+      <img id="logo" src="../assets/logo.png" />
+      <h1>Chorus</h1>
+      <h2>Nobles of Esmeralda</h2>
+    </div>
     <RealmsStrip />
     <ChatStrip />
   </div>
@@ -75,12 +77,22 @@ export default {
   background: url("../assets/layer4.png") no-repeat center center fixed;
 }
 
+#home-header {
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  top: 60px;
+  width: 100%;
+  height: 100%;
+  /* position: absolute; */
+}
+
 h1 {
   margin: 0 0 5px 0;
 
   font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
     "AppleGothic", sans-serif;
-  font-size: 92px;
+  font-size: 3em;
   padding: 80px 50px;
   text-align: center;
   text-transform: uppercase;

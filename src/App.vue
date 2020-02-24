@@ -18,6 +18,7 @@
 html,
 body {
   height: 100%;
+  width: 100%;
   background-color: black;
 }
 
@@ -25,7 +26,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 0;
-  position: absolute;
+  /* position: absolute; */
   /* background: black; */
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
