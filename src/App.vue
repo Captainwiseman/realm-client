@@ -2,8 +2,8 @@
   <div id="app">
     <div id="nav-header">
       <ul class="nav-list">
-      <li><router-link to="/">Home</router-link></li>
-      <li><router-link to="/about">About</router-link></li>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/about">About</router-link></li>
       </ul>
     </div>
     <router-view id="page" />
@@ -15,8 +15,8 @@
   padding: 0;
   margin: 0;
 }
-html, body {
-  /* z-index: -1; */
+html,
+body {
   height: 100%;
   background-color: black;
 }
@@ -31,11 +31,11 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #b8d8d6;
 }
 
 #nav-header {
-  z-index: 1;
+  z-index: 9;
   padding: 10px;
   position: sticky;
   top: 0;
