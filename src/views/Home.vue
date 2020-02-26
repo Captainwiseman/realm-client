@@ -1,15 +1,16 @@
 <template>
-  <div class="home-home">
-    <div class="background-layer layer0"></div>
-    <div class="background-layer layer1"></div>
-    <div class="background-layer layer2"></div>
-    <div class="background-layer layer3"></div>
-    <div class="background-layer layer4"></div>
-    <div class="home-strip"></div>
-    <div id="home-header">
+  <div class="home-mainContainer">
+    <div class="home-header-strip">
+      <div class="background-layer layer0"></div>
+      <div class="background-layer layer1"></div>
+      <div class="background-layer layer2"></div>
+      <div class="background-layer layer3"></div>
+      <div class="background-layer layer4"></div>
+      <div id="home-header">
       <h1>Chorus</h1>
       <h2>Nobles of Esmeralda</h2>
       <img id="logo" src="../assets/logo.png" />
+      </div>
     </div>
     <RealmsStrip class="home-strip" />
     <ChatStrip class="home-strip" />
@@ -31,7 +32,8 @@ export default {
 </script>
 
 <style scoped>
-.home-home {
+.home-mainContainer {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   z-index: 0;
@@ -39,11 +41,30 @@ export default {
   top: 0px;
   width: 100%;
   height: 100%;
-  background-size: cover;
+}
+
+.home-strip {
+  position: relative;
+  z-index: 7;
+  box-sizing: border-box;
+  /* background-color: pink; */
+  border: 3px solid white;
+  height: 33%;
+  width: 100%;
+}
+
+#home-header {
+  /* z-index: 2; */
+  /* top: 60px; */
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 7;
+  box-sizing: border-box;
 }
 
 .background-layer {
-  display: none;
+  /* display: none; */
   z-index: 0;
   width: 100%;
   height: 100%;
@@ -76,27 +97,12 @@ export default {
   background: url("../assets/layer4.png") no-repeat center center fixed;
 }
 
-#home-header {
-  z-index: 2;
-  top: 60px;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-}
-
-.home-strip {
-  background-color: pink;
-  height: 100%;
-  width: 100%;
-}
-
-h1 {
+#home-header > h1 {
   margin: 0 0 5px 0;
 
   font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
     "AppleGothic", sans-serif;
   font-size: 3em;
-  padding: 80px 50px;
   text-align: center;
   text-transform: uppercase;
   text-rendering: optimizeLegibility;

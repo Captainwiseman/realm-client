@@ -7,47 +7,10 @@
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
       deserunt, sequi impedit eaque mollitia magnam cupiditate quisquam. Quod
       quasi sit cum sint officiis labore cupiditate, dignissimos nostrum,
-      voluptatem repudiandae velit!
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      v Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-      facere, nihil commodi soluta sapiente quasi iure repellendus cumque
-      doloremque ipsa error laudantium atque culpa optio est ullam vel natus
-      eveniet.
+      voluptatem repudiandae velit! v Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Assumenda facere, nihil commodi soluta sapiente quasi
+      iure repellendus cumque doloremque ipsa error laudantium atque culpa optio
+      est ullam vel natus eveniet.
     </span>
   </div>
 </template>
