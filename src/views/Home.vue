@@ -1,15 +1,15 @@
 <template>
   <div class="home-mainContainer">
     <div class="home-header-strip">
-      <div class="background-layer layer0"></div>
+      <!-- <div class="background-layer layer0"></div>
       <div class="background-layer layer1"></div>
       <div class="background-layer layer2"></div>
       <div class="background-layer layer3"></div>
-      <div class="background-layer layer4"></div>
+      <div class="background-layer layer4"></div> -->
       <div id="home-header">
-      <h1>Chorus</h1>
-      <h2>Nobles of Esmeralda</h2>
-      <img id="logo" src="../assets/logo.png" />
+        <h1>Chorus</h1>
+        <h2>Nobles of Esmeralda</h2>
+        <img id="logo" src="../assets/logo.png" />
       </div>
     </div>
     <RealmsStrip class="home-strip" />
