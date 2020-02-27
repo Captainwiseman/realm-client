@@ -3,22 +3,32 @@
     <h3 class="chat-title">
       Live Chat
     </h3>
-    <span>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-      deserunt, sequi impedit eaque mollitia magnam cupiditate quisquam. Quod
-      quasi sit cum sint officiis labore cupiditate, dignissimos nostrum,
-      voluptatem repudiandae velit! v Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Assumenda facere, nihil commodi soluta sapiente quasi
-      iure repellendus cumque doloremque ipsa error laudantium atque culpa optio
-      est ullam vel natus eveniet.
-    </span>
+    <div id="chat-log">
+      <ul>
+        <li>
+          <span class="user-name">Shrag</span
+          ><span class="message">Niiiiii</span>
+        </li>
+        <li>
+          <span class="user-name">Shrag</span
+          ><span class="message">Niiiiii</span>
+        </li>
+        <li>
+          <span class="user-name">Shrag</span
+          ><span class="message">Niiiiii</span>
+        </li>
+      </ul>
+    </div>
+    <div class="chat-input-strip">
+      <input type="text" id="chatInput" placeholder="Wallek, start chatting" />
+    </div>
   </div>
 </template>
 
 <script></script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC&display=swap");
 
 #chat {
@@ -37,20 +47,7 @@ h3.chat-title {
   font-variant: normal;
   text-transform: none;
 }
-p.timestamp {
-  font-family: "IM Fell Great Primer SC", "Lucida Sans Unicode", "Lucida Grande",
-    sans-serif;
-  font-size: 17px;
-  letter-spacing: 1.2px;
-  word-spacing: 1px;
-  color: cadetblue;
-  margin: 0;
-  font-weight: 700;
-  text-decoration: none;
-  font-style: normal;
-  font-variant: normal;
-  text-transform: none;
-}
+
 ul {
   margin: 10px 0 0 0;
   list-style-type: none;
@@ -60,19 +57,22 @@ li {
   /* display: inline-block; */
   margin: 0 10px;
 }
-.counter {
-  font-family: "IM Fell Great Primer SC", "Lucida Sans Unicode", "Lucida Grande",
-    sans-serif;
-  font-size: 20px;
-  letter-spacing: 1px;
-  word-spacing: 1px;
-  font-weight: 700;
-  text-decoration: none;
-  font-style: normal;
-  font-variant: normal;
-  text-transform: none;
-}
 a {
   color: #42b983;
+}
+
+.chat-input-strip {
+  margin-top: 1em;
+  padding: 0.2em;
+
+  input[type="text"] {
+    direction: ltr;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    padding: 10px 50em 10px 10px;
+    transition: all 0.1s ease-out;
+  }
 }
 </style>
