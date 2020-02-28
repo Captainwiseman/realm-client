@@ -25,7 +25,48 @@
   </div>
 </template>
 
-<script></script>
+<script>
+// import _ from "lodash";
+import { uuid } from "vue-uuid";
+
+const LOCAL_STORAGE_ITEM = "chorusClientUser";
+
+const stringChorusClientUser = localStorage.getItem(LOCAL_STORAGE_ITEM);
+const objectChorusClientUser = JSON.parse(stringChorusClientUser);
+
+if (!objectChorusClientUser) {
+  const objectDefaultAnonUser = {
+    _id: uuid.v4(),
+    type: "anon",
+    activityLog: [
+      {
+        date: new Date(),
+        activity: "genesis"
+      }
+    ]
+  };
+
+  const stringDefaultAnonUser = JSON.stringify(objectDefaultAnonUser);
+  localStorage.setItem(LOCAL_STORAGE_ITEM, stringDefaultAnonUser);
+} else {
+  const newActivity = {
+    date: new Date(),
+    activity: "started-app"
+  };
+
+  const newObjectChorusClientUser = Object.assign(objectChorusClientUser);
+  newObjectChorusClientUser.activityLog.push(newActivity);
+
+  const newStringChorusClientUser = JSON.stringify(newObjectChorusClientUser);
+  localStorage.setItem(LOCAL_STORAGE_ITEM, newStringChorusClientUser);
+}
+
+console.log("User: ", objectChorusClientUser);
+
+export default {
+  name: "chat"
+};
+</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="sass" scoped>
@@ -35,7 +76,7 @@
   background-color: rgba(0, 0, 0, 0)
 
 
-h3.chat-title 
+h3.chat-title
   font-family: "IM Fell Great Primer SC", "Lucida Sans Unicode", "Lucida Grande",'sans-serif'
   font-size: 26px
   letter-spacing: 1.6px
@@ -46,24 +87,24 @@ h3.chat-title
   font-variant: normal
   text-transform: none
 
-ul 
+ul
   margin: 10px 0 0 0
   list-style-type: none
   padding: 0
 
-li 
+li
   /* display: inline-block */
   margin: 0 10px
 
-a 
+a
   color: #42b983
 
 
-.chat-input-strip 
+.chat-input-strip
   margin-top: 1em
   padding: 0.2em
 
-  input[type="text"] 
+  input[type="text"]
     direction: ltr
     box-sizing: border-box
     outline: none
@@ -71,6 +112,4 @@ a
     border-radius: 3px
     padding: 10px 50em 10px 10px
     transition: all 0.1s ease-out
-  
-
 </style>

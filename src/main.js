@@ -3,6 +3,9 @@ import Vuex from "vuex";
 import App from "./App.vue";
 import router from "./router";
 import VueSocketIO from "vue-socket.io";
+import UUID from 'vue-uuid';
+import VueLodash from 'vue-lodash'
+import lodash from "lodash";
 
 const SERVER_IP = "192.168.1.131";
 
@@ -20,6 +23,10 @@ Vue.use(
     }
   })
 );
+
+Vue.use(UUID);
+
+Vue.use(VueLodash, { lodash: lodash })
 
 new Vue({
   router,
