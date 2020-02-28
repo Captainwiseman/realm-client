@@ -61,7 +61,7 @@ if (!objectChorusClientUser) {
   localStorage.setItem(LOCAL_STORAGE_ITEM, newStringChorusClientUser);
 }
 
-console.log("User: ", objectChorusClientUser);
+// console.log("User: ", localStorage.getItem(LOCAL_STORAGE_ITEM));
 
 export default {
   name: "chat"
