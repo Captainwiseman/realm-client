@@ -7,7 +7,7 @@ import UUID from 'vue-uuid';
 import VueLodash from 'vue-lodash'
 import lodash from "lodash";
 
-const SERVER_IP = "192.168.1.131";
+const SERVER_IP = "87.71.137.78";
 
 Vue.config.productionTip = false;
 
