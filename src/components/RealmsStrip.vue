@@ -12,7 +12,7 @@
 <script>
 import utils from "./scripts/realms.js";
 import axios from "axios";
-const endpoint = "https://realm-server.endlessbrackets.now.sh/api/";
+const endpoint = "https://realm-api.now.sh/api";
 
 export default {
   name: "Realms-Strip",
