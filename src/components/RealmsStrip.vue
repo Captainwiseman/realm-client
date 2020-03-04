@@ -25,7 +25,7 @@
 <script>
 import utils from "./scripts/realms.js";
 import axios from "axios";
-const endpoint = "http://87.71.137.78:3000/world";
+const endpoint = "https://realm-api.now.sh/api";
 
 export default {
   name: "Realms-Strip",
