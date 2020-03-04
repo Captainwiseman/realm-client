@@ -1,5 +1,5 @@
 // const moment = require("moment");
-const numeral = require("numeral");
+// const numeral = require("numeral");
 
 const getTimestampObject = timestamp => {
   const datetime = timestamp.split(",");
@@ -11,7 +11,7 @@ const getTimestampObject = timestamp => {
 
 const formatRealms = realms => {
   const formattedRealms = realms.map(realm => {
-    realm.population.common = numeral(realm.population.common).format("0,0");
+    // realm.population.common = numeral(realm.population.common).format("0,0");
     return realm;
   });
   return formattedRealms;

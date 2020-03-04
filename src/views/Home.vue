@@ -12,20 +12,20 @@
         <img id="logo" src="../assets/logo.png" />
       </div>
     </div>
-    <RealmsStrip class="home-strip" />
+    <!-- <RealmsStrip class="home-strip" /> -->
     <ChatStrip class="home-strip" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import RealmsStrip from "@/components/RealmsStrip.vue";
+// import RealmsStrip from "@/components/RealmsStrip.vue";
 import ChatStrip from "@/components/ChatStrip.vue";
 
 export default {
   name: "home",
   components: {
-    RealmsStrip,
+    // RealmsStrip,
     ChatStrip
   }
 };

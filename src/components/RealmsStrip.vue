@@ -3,19 +3,6 @@
     <span>
       Last updated
     </span>
-    <!-- <ul id="realms-counter">
-      <li v-for="realm in formatedRealmsData" v-bind:key="realm._id">
-        <h3 class="realm-name">{{ realm.name }}</h3>
-        <ul>
-          <li class="counter">Common: {{ realm.population.common }}</li>
-        </ul>
-        <ul class="realms-armies">
-          <li v-for="army in realm.population.armies" v-bind:key="army.name">
-            {{ army.name }}
-          </li>
-        </ul>
-      </li> -->
-    <!-- </ul> -->
     <div>
       <pre class="payload">{{ realmsData }}</pre>
     </div>
@@ -25,7 +12,7 @@
 <script>
 import utils from "./scripts/realms.js";
 import axios from "axios";
-const endpoint = "http://87.71.137.78:3000/world";
+const endpoint = "https://realm-server.endlessbrackets.now.sh/api/";
 
 export default {
   name: "Realms-Strip",
@@ -50,8 +37,6 @@ export default {
       })
       .then(response => {
         this.realmsData = response.data; // Formatted mutates original, need to fix
-        this.formatedRealmsData = utils.formatRealms(this.realmsData);
-        this.timestamp = utils.getTimestampObject(response.data[0].timestamp); //Getting the data from the first realm. NEED BETTER SERVER DATA
       });
   }
 };
